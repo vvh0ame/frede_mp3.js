@@ -65,7 +65,7 @@ class FredeMP3:
 		for card in cards:
 			data[card] = value
 		return requests.post(
-			f"{self.api}/saveCards.php",
+			f"{self.api}/S3RATE228/saveCards.php",
 			data=data,
 			headers=self.headers).text
 
