@@ -2,7 +2,7 @@ import requests
 
 class FredeMP3:
 	def __init__(self):
-		self.api = "https://fredemp3.ru"
+		self.api = "https://fredemp3.ru/S3RATE228"
 		self.headers = {
 			"user-agent": "UnityPlayer/2021.3.8f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)",
 			"x-unity-version": "2021.3.8f1"
@@ -14,13 +14,13 @@ class FredeMP3:
 			"loginPassword": password
 		}
 		return requests.post(
-			f"{self.api}/S3RATE228/Login.php",
+			f"{self.api}/Login.php",
 			data=data,
 			headers=self.headers).text
 
 	def get_global(self):
 		return requests.get(
-			f"{self.api}/S3RATE228/getGlobal.php",
+			f"{self.api}/getGlobal.php",
 			headers=self.headers).text
 
 	def register(
@@ -34,7 +34,7 @@ class FredeMP3:
 			"email": email
 		}
 		return requests.post(
-			f"{self.api}/S3RATE228/Register.php",
+			f"{self.api}/Register.php",
 			data=data,
 			headers=self.headers).text
 
@@ -50,7 +50,7 @@ class FredeMP3:
 			for value in values:
 				data[statistic] = value
 		return requests.post(
-			f"{self.api}/S3RATE228/saveOther.php",
+			f"{self.api}/saveOther.php",
 			data=data,
 			headers=self.headers).text
 
@@ -65,7 +65,7 @@ class FredeMP3:
 		for card in cards:
 			data[card] = value
 		return requests.post(
-			f"{self.api}/S3RATE228/saveCards.php",
+			f"{self.api}/saveCards.php",
 			data=data,
 			headers=self.headers).text
 
@@ -74,6 +74,6 @@ class FredeMP3:
 			"loginUser": username
 		}
 		return requests.post(
-			f"{self.api}/S3RATE228/getOther.php",
+			f"{self.api}/getOther.php",
 			data=data,
 			headers=self.headers).text
