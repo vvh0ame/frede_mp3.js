@@ -5,6 +5,6 @@ Mobile-API for [frede.mp3](https://play.google.com/store/apps/details?id=com.Hon
 ```python
 import frede_mp3
 frede_mp3 = frede_mp3.FredeMP3()
-global = frede_mp3.get_global()
-print(global)
+global_info = frede_mp3.get_global()
+print(global_info)
 ```
