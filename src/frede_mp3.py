@@ -46,9 +46,7 @@ class FredeMP3:
 		data = {
 			"loginUser": username
 		}
-		for statistic in statistics:
-			for value in values:
-				data[statistic] = value
+		data.update(dict(zip(statistics, values)))
 		return requests.post(
 			f"{self.api}/saveOther.php",
 			data=data,
