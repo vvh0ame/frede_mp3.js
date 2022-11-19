@@ -1,14 +1,14 @@
 import requests
 
 class FredeMP3:
-	def __init__(self):
+	def __init__(self) -> None:
 		self.api = "https://fredemp3.ru/S3RATE228"
 		self.headers = {
 			"user-agent": "UnityPlayer/2021.3.8f1 (UnityWebRequest/1.0, libcurl/7.80.0-DEV)",
 			"x-unity-version": "2021.3.8f1"
 		}
 
-	def login(self, username: str, password: str):
+	def login(self, username: str, password: str) -> str:
 		data = {
 			"loginUser": username,
 			"loginPassword": password
@@ -18,7 +18,7 @@ class FredeMP3:
 			data=data,
 			headers=self.headers).text
 
-	def get_global(self):
+	def get_global(self) -> str:
 		return requests.get(
 			f"{self.api}/getGlobal.php",
 			headers=self.headers).text
@@ -27,7 +27,7 @@ class FredeMP3:
 			self,
 			username: str,
 			password: str,
-			email: str):
+			email: str) -> str:
 		data = {
 			"loginUser": username,
 			"loginPassword": password,
@@ -42,7 +42,7 @@ class FredeMP3:
 			self,
 			username: str,
 			statistics: list,
-			values: list):
+			values: list) -> str:
 		data = {
 			"loginUser": username
 		}
@@ -56,7 +56,7 @@ class FredeMP3:
 			self,
 			username: str,
 			cards: list,
-			value: int):
+			value: int) -> str:
 		data = {
 			"loginUser": username
 		}
@@ -67,7 +67,7 @@ class FredeMP3:
 			data=data,
 			headers=self.headers).text
 
-	def get_other(self, username: str):
+	def get_other(self, username: str) -> str:
 		data = {
 			"loginUser": username
 		}
